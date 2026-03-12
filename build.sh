@@ -11,9 +11,8 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
-dnf copr enable @kernel-vanilla/mainline
-
-dnf5 -y upgrade "*kernel*"
+dnf5 copr enable @kernel-vanilla/mainline
+dnf5 -y upgrade 'kernel*'
 
 rpm-ostree install netbird-ui
 dnf5 clean all
