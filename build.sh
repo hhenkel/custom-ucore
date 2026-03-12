@@ -13,6 +13,7 @@ EOF
 
 dnf5 -y copr enable @kernel-vanilla/mainline
 dnf5 -y upgrade 'kernel*'
+dnf5 -y upgrade kernel-core kernel
 
 rpm-ostree install netbird-ui
 dnf5 clean all
