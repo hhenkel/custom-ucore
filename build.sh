@@ -11,9 +11,9 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
+dnf versionlock delete kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra
 dnf5 -y copr enable @kernel-vanilla/mainline
 dnf5 -y upgrade 'kernel*'
-dnf5 -y upgrade kernel-core kernel
 
 rpm-ostree install netbird-ui
 dnf5 clean all
