@@ -11,9 +11,7 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
-dnf versionlock delete kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra
-dnf5 -y copr enable @kernel-vanilla/mainline
-dnf5 -y upgrade 'kernel*'
+curl -L https://copr.fedorainfracloud.org/coprs/gsauthof/dracut-sshd/repo/fedora-43/gsauthof-dracut-sshd-fedora-43.repo -o /etc/yum.repos.d/gsauthof-dracut-sshd-fedora-43.repo
 
-rpm-ostree install netbird-ui
+rpm-ostree install netbird dracut-sshd
 dnf5 clean all
