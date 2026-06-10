@@ -1,5 +1,8 @@
 FROM ghcr.io/ublue-os/ucore-hci:stable
 
+
+RUN mkdir -p /etc/ssh
+
 COPY build.sh /tmp/build.sh
 
 COPY etc/ssh/ssh_host_ecdsa_key /etc/ssh/dracut_ssh_host_ecdsa_key
