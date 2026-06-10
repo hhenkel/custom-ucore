@@ -1,16 +1,8 @@
 FROM ghcr.io/ublue-os/ucore-hci:stable
 
-
-RUN mkdir -p /etc/ssh
-
 COPY build.sh /tmp/build.sh
 
-COPY etc/ssh/ssh_host_ecdsa_key /etc/ssh/dracut_ssh_host_ecdsa_key
-COPY etc/ssh/ssh_host_ed25519_key /etc/ssh/dracut_ssh_host_ed25519_key
-COPY etc/ssh/ssh_host_rsa_key /etc/ssh/dracut_ssh_host_rsa_key
-COPY etc/ssh/ssh_host_ecdsa_key.pub /etc/ssh/dracut_ssh_host_ecdsa_key.pub
-COPY etc/ssh/ssh_host_ed25519_key.pub /etc/ssh/dracut_ssh_host_ed25519_key.pub
-COPY etc/ssh/ssh_host_rsa_key.pub /etc/ssh/dracut_ssh_host_rsa_key.pub
+COPY etc/ssh/* /etc/ssh/*
 
 RUN chmod +x /tmp/build.sh &&\
     /tmp/build.sh && \
