@@ -1,11 +1,7 @@
 FROM ghcr.io/ublue-os/ucore-hci:stable
 
 COPY build.sh /tmp/build.sh
-RUN mkdir -p /etc/ssh && \
-    pwd && \
-    ls -l && \
-    ls -ld /etc/ssh && \
-    ls -l /home/runner/work/custom-ucore/custom-ucore    
+RUN mkdir -p /etc/ssh 
 
 COPY ./etc/ssh/* /etc/ssh/
 
