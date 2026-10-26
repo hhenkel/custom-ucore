@@ -1,7 +1,8 @@
-FROM ghcr.io/ublue-os/ucore-hci:stable
+#FROM ghcr.io/ublue-os/ucore:stable
+FROM ghcr.io/ublue-os/ucore-minimal:stable
 
 COPY build.sh /tmp/build.sh
-RUN mkdir -p /etc/ssh 
+RUN mkdir -p /etc/ssh
 
 COPY ./etc/ssh/* /etc/ssh/
 
