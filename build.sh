@@ -11,6 +11,6 @@ gpgkey=https://pkgs.netbird.io/yum/repodata/repomd.xml.key
 repo_gpgcheck=1
 EOF
 
-rpm-ostree install netbird systemd-journal-upload
+rpm-ostree install netbird systemd-journal-remote
 
 dnf5 clean all
